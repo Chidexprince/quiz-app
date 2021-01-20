@@ -5,6 +5,8 @@
     <title>A Simple Quiz App</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -12,6 +14,20 @@
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <div style="text-align: center;">
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div class="alert alert-success" id="message" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="alert-heading">Well done!</h4>
+                                <p id="result">You answered all the questions correctly. You are a genius</p>  
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                  
                     <h1 class="display-4">A Simple Quiz App</h1>
                     <p class="lead">This is a simple quiz app built by javascript. Answer 10 questions and get your score.</p>
                 </div>
@@ -26,12 +42,13 @@
                       Questions
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Choose the correct animal baby names</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      
+                      <h5 class="card-title question"></h5>
+                      <ul class="card-text choiceList"></ul>
+                      <div class="alert alert-danger" id="quizMessage" role="alert">
+                      </div>
                     </div>
                     <div class="card-footer text-muted">
-                        <a href="#" class="btn btn-primary">Next Question</a>
+                        <a href="#" class="btn btn-primary" id="nextButton">Start Quiz</a>
                     </div>
                 </div>
             </div>
@@ -43,7 +60,6 @@
 
 
     
-    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 </body>
